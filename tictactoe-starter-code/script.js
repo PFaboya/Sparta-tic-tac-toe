@@ -1,29 +1,45 @@
 $(function(event){
 
-var turn = "first"
+var turn = "X"
 
-$("table").on("click",function(){
-  $("td").each(function(index, grid){
-    $(grid).on("click", function(){
+// $("table").on("click",function(){
+//   $("td").each(function(index, grid){
+//     $(grid).on("click", function(){
+//     })
+  // })
+  // if(turn == "first"){
+  //   $("td").each(function(index, grid){
+  //   $(grid).on("click", function(){
+  //   $(grid).html("X")
+  //   console.log("first player clicked")
+  //   turn = "second"
+  // })
+  // })
+  // }
+  // else {
+  //   $("td").each(function(index, grid){
+  //
+  //   $(grid).on("click", function(){
+  //   $(grid).html("O")
+  //   console.log("second player clicked")
+  //   turn = "first"
+  // })
+  // })
+  // }
+  function addClickListeners(){
+    $("td").each(function(index, grid){
+      $(grid).on("click", function(){
+        if (turn == "X"){
+          $(this).html("X")
+          turn = "O"
+        } else {
+          $(this).html("O")
+          turn = "X"
+        }
+      })
     })
-  })
-  if(turn == "first"){
-    $("td").each(function(index, grid){
-    console.log("first player clicked")
-    turn = "second"
-    $(grid).html("X")
-  })
   }
-  else {
-    $("td").each(function(index, grid){
-
-    console.log("second player clicked")
-    turn = "first"
-    $(grid).html("O")
-  })
-  }
-  if(turn == "second"){
-  }
+addClickListeners()
 })
 
 
@@ -32,7 +48,7 @@ $("table").on("click",function(){
 
 
 
-})
+// })
 
 
 
