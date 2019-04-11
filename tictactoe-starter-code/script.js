@@ -1,6 +1,8 @@
 $(function(event){
 
+
   var turn = "X"
+
 
 
   function addClickListeners(){
@@ -9,9 +11,11 @@ $(function(event){
         if (turn == "X"){
           $(this).html("X")
           turn = "O"
+          $(".playerTurn").html("It is O's turn")
         } else {
           $(this).html("O")
           turn = "X"
+          $(".playerTurn").html("It is X's turn")
         }
       })
     })
@@ -19,6 +23,8 @@ $(function(event){
   addClickListeners()
 
   $("#reset").on("click", function(){
+    turn = "X"
     $("td").html("");
+    $(".playerTurn").html("It is X's turn")
   })
 })
