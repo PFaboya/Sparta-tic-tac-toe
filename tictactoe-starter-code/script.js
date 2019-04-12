@@ -22,6 +22,18 @@ $(function(event){
   }
   addClickListeners()
 
+  // function AIMove(){
+  //
+  // }
+
+  function gameComplete(){
+    console.log($("td").attr("data-num","0")[1].innerHTML);
+    if ($("td").attr("data-num","0")[0].innerHTML == "X" && $("td").attr("data-num","0")[1].innerHTML == "X" && $("td").attr("data-num","0")[2].innerHTML == "X"){
+      console.log("it works")
+    }
+  }
+  gameComplete()
+
   $("#reset").on("click", function(){
     turn = "X"
     $("td").html("");
